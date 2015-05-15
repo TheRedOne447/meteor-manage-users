@@ -1,9 +1,9 @@
 Template.updateRolesModalInner.helpers({
-	roles: function() {
-		return Roles.getAllRoles();
-	},
-	adminRole: function() {
-		return this.name === 'admin';
+	data: function() {
+		var data = {
+			"roles":Roles.getAllRoles()
+			}
+		return data;
 	}
 });
 

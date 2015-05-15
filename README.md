@@ -16,3 +16,14 @@ Meteor.startup ->
 
 Navigate to /admin/users to add users, add roles to users,
 create/manage roles, delete users and superAdmins can impersonate (to debug) users
+
+
+## Theme Support
+To use a theme other than Bootstrap install the smart package for the theme and than add the theme option to the template call.
+
+```
+	{{> accountsAdmin theme="foundation"}}
+```
+
+### Community maintained themes:
+[foundation](https://github.com/TheRedOne447/meteor-manage-users-foundation-theme)

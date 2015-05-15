@@ -1,32 +1,20 @@
 Template.updateAccountModalInner.helpers({
-	email: function () {
-		if (this.emails && this.emails.length)
-			return this.emails[0].address;
-
-		if (this.services) {
-			//Iterate through services
-			for (var serviceName in this.services) {
-				var serviceObject = this.services[serviceName];
-				//If an 'id' isset then assume valid service
-				if (serviceObject.id) {
-					if (serviceObject.email) {
-						return serviceObject.email;
-					}
-				}
-			}
-		}
-		return "";
-	},
-
-	userInScope: function() {
-		return Session.get('userInScope');
-	},
-
-	unsetRoles: function() {
+	data: function() {
+		var userInScope = Session.get('userInScope');
+		var unsetRoles;
 		var allRoles = _.pluck(Roles.getAllRoles().fetch(), "name");
-		if (!this.roles)
-			return allRoles;
-		return _.difference(allRoles, this.roles);
+		if (!userInScope || !userInScope.roles) {
+			unsetRoles = allRoles;
+		} else {
+			unsetRoles = _.difference(allRoles, userInScope.roles);
+		}
+
+		var data = {
+			'userInScope':userInScope,
+			'unsetRoles':unsetRoles
+			}
+
+		return data;
 	}
 });
 
