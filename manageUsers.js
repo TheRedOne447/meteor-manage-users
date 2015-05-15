@@ -1,0 +1,4 @@
+
+ManageUsers = ManageUsers || {};
+
+ManageUsers.closeModal = {};

@@ -37,8 +37,8 @@ Template.registerHelper("adminRole", function(){
 	return this.name === 'admin';
 });
 
-closeModal = {};
+
 
 globalCloseModal = function (modal,theme) {
-	closeModal[theme](modal);
+	ManageUsers.closeModal[theme](modal);
 };

@@ -11,6 +11,7 @@ Package.on_use(function (api, where) {
 	api.use("alanning:roles@1.2.13", ['client', 'server']);
 
 	api.add_files('libs/user_query.js', ['client', 'server']);
+	api.add_files('manageUsers.js','client');
 
 	api.add_files('client/startup.js', 'client');
 	api.add_files('client/globalHelpers.js','client');
@@ -42,5 +43,7 @@ Package.on_use(function (api, where) {
 	api.add_files('server/publish.js', 'server');
 	api.add_files('server/methods.js', 'server');
 
-	api.export('ManageUsers', ['server', 'client']);
+
+
+	api.export('ManageUsers', ['server','client']);
 });

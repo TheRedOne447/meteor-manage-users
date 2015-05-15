@@ -1,3 +1,3 @@
-closeModal['bootstrap'] =  function(modal) {
+ManageUsers.closeModal['bootstrap'] =  function(modal) {
 	$(modal).modal('hide');
 };
